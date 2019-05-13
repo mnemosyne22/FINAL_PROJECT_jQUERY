@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Tabbed Menu - GOT</title>
+    <link href="styles/normalize.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,600|Roboto+Condensed|Stylish" rel="stylesheet">
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="scripts/jQuery%20v3.4.1.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        // CSS Tab Menu
+        $(document).ready(function () {
+            "use strict"
+            $("#tab-menu").css({
+                "background": "#f2f2f2",
+                "border-radius": "10px",
+                "margin": "25px",
+                "padding": "25px"
+            });
+            $(".tab-links").css({
+                "width": "auto",
+                "height": "33px",
+                "border-radius": "5px",
+                "padding": "20px 0 0 5px",
+                "font-family": "'Stylish', sans-serif"
+            });
+            $(".links").css({
+                "border-radius": "5px",
+                "margin": "20px 0 0 0",
+                "padding": "15px ",
+                "color": "#ffffff",
+                "background-color": "#000000",
+                "text-decoration": "none"
+            });
+            $(".content").css({
+                "font-fammily": "'Roboto Condensed', sans-serif",
+                "color": "#3333cc",
+                "background-color": "#ffffff",
+                "display": "none",
+                "padding": "20px",
+                "margin": "10px",
+                "border-radius": "10px"
+            });
+        });
+
+        $(document).ready(function(){
+             "use strict";
+            $(".content").hide();
+            // Active 
+            $("#link-1").css({"background": "#3333cc"});
+            $("#content-1").css({"display": "block"});
+
+            // Click Link: active css style
+            $("div a").click(function () {
+                $(".links").css({"background-color": "#000000"});
+                $(".content").hide();
+                $(this).css({"background-color": "#3333cc"});
+            });
+            // Display Content
+            $("#link-1").click(function(){
+                $("#content-1").css("display", "block");
+            });
+            $("#link-2").click(function(){
+              $("#content-2").css("display", "block");
+            });
+             $("#link-3").click(function(){
+               $("#content-3").css("display", "block");
+            });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="tab-menu">
+
+            <!-- Tab links -->
+            <div class="tab-links">
+                <!-- TAB 1 -->
+                <a id="link-1" class="links" href="#content-1">John Snow</a>
+                <!-- TAB 2 -->
+                <a id="link-2" class="links" href="#content-2">Daenerys Targaryen</a>
+                <!-- TAB 3 -->
+                <a id="link-3" class="links" href="#content-3">Sansa Stark</a>
+            </div>
+
+            <!-- Tab Contents -->
+            <!-- Content 1 -->
+            <div id="content-1" class="content">
+                <h2>Jon Snow / Aegon Targaryen</h2>
+                <p>
+                    Jon -- or Aegon Targaryen -- has both the right lineage and the right character to sit on the Iron Throne. As the son of Rhaegar Targaryen and Lyanna Stark, Jon is the rightful heir. In fact, it’s his birthright. But if his lineage alone doesn’t convince you, his actions should. He has the intellect, experiences and skills to effectively rule Westeros.<br>
+                    Jon is familiar with many parts of the Seven Kingdoms and many of his would-be subjects. While he grew up in Winterfell, he spent a significant amount of time traveling in the North and exploring other parts of the Seven Kingdoms. Everywhere he went, as he made new friends and allies.<br>
+                </p>
+            </div>
+            <!-- Content 2 -->
+            <div id="content-2" class="content">
+                <h2>Daenerys Targaryen</h2>
+                <p>
+                    After years of war, Westeros has a chance to rebuild, and the leader best positioned to lead that effort is Daenerys Targaryen, Mother of Dragons. She has secured alliances with almost every major region of the continent, brought together different cultures, engaged in compromise for the good of the community and proven her commitment to the people of Westeros by risking her life for them.<br>
+                    Although criticized for her ambition, Daenerys suspended her quest for the Iron Throne to protect the North. Unlike Jon, who jeopardized his entire army when he rushed into battle after watching Rickon die, Daenerys is channeling her pain into rethinking a losing battle strategy. Tormund praises Jon for befriending an enemy, going north of the Wall, and flying a dragon into battle; Daenerys did these things and more.<br>
+                    But of course, now she´s gone CRAAAZY.
+                </p>
+            </div>
+            <!-- Content 3 -->
+            <div id="content-3" class="content">
+                <h2>Sansa Stark</h2>
+                <p>
+                    Sansa is the only character on Game of Thrones, besides Cersei Lannister, who knows how to wield power behind the scenes, think ten steps ahead of her enemy, as well as her so-called “allies.” However, unlike Cersei, Sansa maintains a moral core. Sansa’s bloodline does not entitle her to claim control of the Seven Kingdoms, but her ascension would be the most delicious revenge for all she suffered as a result of Cersei's ruthless pawning of her when she was only a child.<br>
+                    Sansa doesn’t force allegiance, she earns it with her brilliant mind and regal presence, as Danaerys once did. In Sansa’s case, though, she makes cool-headed calculations, rather than retaliating on impulse. And unlike Danaerys, Sansa has the trust of the North. Through her brother/cousin Jon Snow, and her own leadership qualities, she could conceivably also earn the trust of the South. She is the best-rounded leader. If it were not for patriarchal lineage she would be the obvious choice to assume the Iron Throne.
+                </p>
+            </div>
+
+        </section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Accordion Menu - GOT</title>
+    <link href="styles/normalize.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,600|Roboto+Condensed|Stylish" rel="stylesheet">
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="scripts/jQuery%20v3.4.1.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        // CSS Accordion
+        $(document).ready(function () {
+            "use strict"
+            $("#winner").css({
+                "width": "100%",
+                "height": "auto",
+                "text-align": "center",
+                "font-family": "'Roboto Condensed', sans-serif",
+                "color": "#cccccc",
+                "margin-bottom": "20px"
+            });    
+            $("#accordion").css({
+                "width": "50%",
+                "height": "auto",
+                "background": "#000000",
+                "border": "1px solid #f2f2f2",
+                "border-radius": "10px",
+                "margin": "20%",
+                "padding": "15px"
+            });
+            $("#menu").css({
+                "border-radius": "10px",
+                "margin": "15px",
+                "padding": "15px"
+            });
+            $("ul").css({
+                "margin": "0",
+                "padding": "0"
+            });
+            $("ul li ul li:first-child").css({
+                "border-radius": "10px",
+                "background-color": "#000000",
+                "background-image": "url('images/arrow-right.svg')",
+                "background-repeat": "no-repeat",
+                "background-size": "20px",
+                "background-position": "10px center"
+            });
+            $("li").css({
+                "list-style": "none"
+            });
+            $(".section").css({
+                "width": "auto",
+                "margin": "10px"
+            });
+            $(".link").css({
+                "width": "auto",
+                "height": "auto",
+                "background-color": "#000000",
+                "border": "2px solid #3333cc",
+                "border-radius": "10px",
+                "padding": "10px 40px",
+                "cursor": "pointer"
+            });
+            $(".link a").css({
+                "color": "#f2f2f2",
+                "font-family": "'Stylish', sans-serif",
+                "text-decoration": "none",
+                "padding": "15px"
+            });
+            $(".content").css({
+                "background-color": "#f2f2f2",
+                "border-radius": "0 0 25px 25px",
+                "padding": "15px",
+                "color": "#3333cc",
+                "font-family": "'Roboto Condensed', sans-serif",
+                "text-decoration": "none"
+            });
+        });
+
+
+        $(document).ready(function () {
+            "use strict";
+            
+            // Active By Default
+            $(".content").hide();
+            
+            // Click Event
+            $("ul li ul").click(function () {
+                // Reset
+                $(".content").slideUp();
+                $("ul li ul").find("li:first-child").css({
+                    "border-radius": "10px",
+                    "background-color": "#000000",
+                    "background-image": "url('images/arrow-right.svg')",
+                    "background-repeat": "no-repeat",
+                    "background-size": "20px",
+                    "background-position": "10px center"
+                });
+                // Active
+                $(this).find("li:last-child").slideDown();
+                $(this).find("li:first-child").css({
+                    "border-radius": "10px 10px 0 0",
+                    "background-color": "#3333cc",
+                    "background-image": "url('images/arrow-down.svg')",
+                    "background-repeat": "no-repeat",
+                    "background-size": "20px",
+                    "background-position": "10px center"
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <main>
+        <!-- Accordion -->
+        <section id="accordion" class="accordion">
+            <div id="winner">
+                <h2>Who will win the Game of Thrones?</h2>
+            </div>
+            <!-- Menu -->
+            <ul id="menu" class="menu">
+                <!-- Section Menu 1 -->
+                <li class="section">
+                    <!-- Section 1 -->
+                    <ul>
+                        <li class="link">
+                            <a id="link-1" href="#content-2">JON / AEGON</a>
+                        </li>
+                        <li id="content-1" class="content">
+                          <h2>Jon Snow / Aegon Targaryen</h2>
+                          <p>
+                            Jon -- or Aegon Targaryen -- has both the right lineage and the right character to sit on the Iron Throne. As the son of Rhaegar Targaryen and Lyanna Stark, Jon is the rightful heir. In fact, it’s his birthright. But if his lineage alone doesn’t convince you, his actions should. He has the intellect, experiences and skills to effectively rule Westeros.<br>
+                            Jon is familiar with many parts of the Seven Kingdoms and many of his would-be subjects. While he grew up in Winterfell, he spent a significant amount of time traveling in the North and exploring other parts of the Seven Kingdoms. Everywhere he went, as he made new friends and allies.<br>
+                            
+                          </p>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Section Menu 2 -->
+                <li class="section">
+                    <!-- Section 2 -->
+                    <ul>
+                        <li class="link">
+                            <a id="link-2" href="#content-2">DAENERYS</a>
+                        </li>
+                        <li id="content-2" class="content">
+                          <h2>Daenerys Targaryen</h2>
+                          <p>
+                            After years of war, Westeros has a chance to rebuild, and the leader best positioned to lead that effort is Daenerys Targaryen, Mother of Dragons. She has secured alliances with almost every major region of the continent, brought together different cultures, engaged in compromise for the good of the community and proven her commitment to the people of Westeros by risking her life for them.<br>
+                            Although criticized for her ambition, Daenerys suspended her quest for the Iron Throne to protect the North. Unlike Jon, who jeopardized his entire army when he rushed into battle after watching Rickon die, Daenerys is channeling her pain into rethinking a losing battle strategy. Tormund praises Jon for befriending an enemy, going north of the Wall, and flying a dragon into battle; Daenerys did these things and more.<br>
+                            But of course, now she´s gone CRAAAZY.
+                          </p>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Section Menu 3 -->
+                <li class="section">
+                    <!-- Section 3 -->
+                    <ul>
+                        <li class="link">
+                            <a id="link-3" href="#content-3">SANSA</a>
+                        </li>
+                        <li id="content-3" class="content">
+                          <h2>Sansa Stark</h2>
+                          <p>
+                            Sansa is the only character on Game of Thrones, besides Cersei Lannister, who knows how to wield power behind the scenes, think ten steps ahead of her enemy, as well as her so-called “allies.” However, unlike Cersei, Sansa maintains a moral core. Sansa’s bloodline does not entitle her to claim control of the Seven Kingdoms, but her ascension would be the most delicious revenge for all she suffered as a result of Cersei's ruthless pawning of her when she was only a child.<br>
+                            Sansa doesn’t force allegiance, she earns it with her brilliant mind and regal presence, as Danaerys once did. In Sansa’s case, though, she makes cool-headed calculations, rather than retaliating on impulse. And unlike Danaerys, Sansa has the trust of the North. Through her brother/cousin Jon Snow, and her own leadership qualities, she could conceivably also earn the trust of the South. She is the best-rounded leader. If it were not for patriarchal lineage she would be the obvious choice to assume the Iron Throne.
+                          </p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Section Menu 4 -->
+                <li class="section">
+                    <!-- Section 4 -->
+                    <ul>
+                        <li class="link">
+                            <a id="link-4" href="#content-4">TYRION</a>
+                        </li>
+                        <li id="content-4" class="content">
+                          <h2>Tyrion Lannister</h2>
+                          <p>
+                            Let’s face it, the warriors of Game of Thrones have been pretty useless as rulers and tacticians. Robert Baratheon: victorious war hero, sleazy king. Robb Stark and Jon Snow: gave rousing battle speeches, got murdered by their own mutinous men. Daenerys Targaryen: great on a dragon, heavier on the crucifying and burning than on building a civic society.<br>
+                            No, if someone’s going to rule Westeros peacefully, it’s got to be someone who can do politics. It would be useful if that person had a legitimate claim to the Iron Throne, although claims seem to be pulled out of top hats like rabbits in Westeros these days.<br>
+                            Does he have a claim? It's a stretch, but he’s far superior to the other contenders. What a victory his comeback would be for the many of us who, like Tyrion, identify with “cripples, bastards and broken things.”
+                          </p>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Section Menu 5 -->
+                <li class="section">
+                    <!-- Section 5 -->
+                    <ul>
+                        <li class="link">
+                            <a id="link-5" href="#content-5">ARYA</a>
+                        </li>
+                        <li id="content-5" class="content">
+                          <h2>Arya Stark</h2>
+                          <p>
+                            Notwithstanding the fact that Arya does not want the Iron Throne, her rule would represent the fulfillment of the most important Game of Thrones ethos: you win or you die. And if you are on Arya’s list of enemies, you usually die -- making her arguably the most effective player in the Game of Thrones.<br>
+                            To be sure, Sansa on the Iron Throne with Arya as her Assassin Advisor would be acceptable. Yet Arya has her own merits. Her rule would radically and positively change all of Westeros. She has the power to do what Dany said she would do- she would break the wheel of cyclical power that grinds the oppressed beneath it. Arya would bring strategic, absolute justice to the powerful.<br>
+                            Arya’s rule would also bring more gender equity in the kingdoms. Long may she reign.
+                          </p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </section>
+	</main>
+</body>
+</html>
